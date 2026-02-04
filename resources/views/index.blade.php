@@ -52,12 +52,32 @@
         @csrf
         
         <div class="px-8 py-6 flex justify-end items-center gap-6 lg:gap-10 text-sm font-medium text-[#4ADE80]">
-            <a href="/" class="text-gray-900 border-b-2 border-gray-900 pb-1 font-semibold">Pesanan</a>
-            <a href="{{ route('keranjang') }}" class="hover:text-gray-900 transition">Keranjang</a>
-            <a href="#" class="hover:text-gray-900 transition">Toko</a>
-            <a href="#" class="hover:text-gray-900 transition">FAQ</a>
-            <button type="button" class="bg-[#4ADE80] text-white px-3 py-1 rounded-md flex items-center gap-1 shadow hover:bg-green-400 transition text-xs font-bold">
-                EN <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+
+            <a href="/"
+                class="{{ request()->is('/') ? 'text-gray-900 border-b-2 border-gray-900 pb-1 font-semibold' : 'hover:text-gray-900 transition' }}">
+                Pesanan
+            </a>
+
+            <a href="{{ route('keranjang') }}"
+                class="{{ request()->routeIs('keranjang') ? 'text-gray-900 border-b-2 border-gray-900 pb-1 font-semibold' : 'hover:text-gray-900 transition' }}">
+                Keranjang
+            </a>
+
+            <a href="#"
+                class="">
+                Toko
+            </a>
+
+            <a href=""
+                class="">
+                FAQ
+            </a>
+
+            <button
+                class="bg-[#4ADE80] text-white px-3 py-1 rounded-md flex items-center gap-1 shadow hover:bg-green-400 transition text-xs font-bold">
+                EN <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
             </button>
         </div>
 
