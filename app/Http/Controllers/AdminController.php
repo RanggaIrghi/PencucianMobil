@@ -8,6 +8,7 @@ use App\Models\Layanan;
 use App\Models\Pelanggan;
 use App\Models\Kendaraan;
 use App\Models\Transaksi;
+use Carbon\Carbon; 
 
 class AdminController extends Controller
 {
@@ -131,10 +132,28 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $transaksis = Transaksi::with(['kendaraan.pelanggan', 'layanan'])
-                        ->orderBy('created_at', 'desc')
-                        ->get();
+        $totalRevenue = Transaksi::sum('total_harga'); 
+        
+        // 2. Hitung Jumlah Transaksi
+        $totalTransactions = Transaksi::count();
 
-        return view('auth/dashboard', compact('transaksis'));
-    }
+        $averageSales = Transaksi::avg('total_harga');
+
+        $recentTransactions = Transaksi::with(['kendaraan.pelanggan', 'layanan'])
+                                ->orderBy('created_at', 'desc')
+                                ->take(5)
+                                ->get();
+
+        $revenueThisMonth = Transaksi::whereMonth('created_at', Carbon::now()->month)->sum('total_harga');
+
+        return view('auth/dashboard', compact(
+            'totalRevenue', 
+            'totalTransactions', 
+            'averageSales', 
+            'recentTransactions',
+            'revenueThisMonth'
+        ));
+}
+
+    
 }

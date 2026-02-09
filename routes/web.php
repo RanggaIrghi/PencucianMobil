@@ -30,6 +30,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/transaction', [AdminController::class, 'createTransaksi'])->name('transaction');
     
     Route::post('/transaction/new', [AdminController::class, 'storeTransaksi'])->name('admin.transaksi.store');
+
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 });
 
     
@@ -37,7 +39,4 @@ Route::get('/employees', function() {
     return view('auth/employees');
 })->name('employees');
 
-Route::get('/dashboard', function() {
-    return view('auth/dashboard');
-})->name('dashboard');
 
