@@ -17,7 +17,7 @@
             
             <h2 class="text-3xl font-bold text-[#050B18] mb-8">Login to your account</h2>
 
-            <form action="{{ route('login') }}" method="POST" class="space-y-5">
+            <form action="{{ route('admin.login.submit') }}" method="POST" class="space-y-5">
                 @csrf
                 
                 <div>

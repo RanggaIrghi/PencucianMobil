@@ -27,8 +27,8 @@
             Pembayaran
         </a>
 
-        <a href="#" 
-           class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 justify-between">
+        <a href="{{ route('queue') }}" 
+           class="{{ request()->routeIs('queue') ? 'text-[#4ADE80] bg-green-50' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50' }} flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50 justify-between">
             <div class="flex items-center gap-3">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 Antrian
@@ -36,14 +36,14 @@
             <span class="bg-[#2c3e50] text-white text-xs font-bold px-2 py-0.5 rounded-full">1</span>
         </a>
 
-        <a href="#" 
-           class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">
+        <a href="{{ route('employees') }}" 
+           class="{{ request()->routeIs('employees') ? 'text-[#4ADE80] bg-green-50' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50' }} flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
             Karyawan
         </a>
 
-        <a href="#" 
-           class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">
+        <a href="{{ route('dashboard') }}" 
+           class="{{ request()->routeIs('dashboard') ? 'text-[#4ADE80] bg-green-50' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50' }} flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
             Laporan
         </a>
